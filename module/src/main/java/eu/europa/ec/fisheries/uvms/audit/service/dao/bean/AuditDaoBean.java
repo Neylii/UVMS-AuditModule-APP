@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 @Stateless
 public class AuditDaoBean {
 
-    final static Logger LOG = LoggerFactory.getLogger(AuditDaoBean.class);
+    static final Logger LOG = LoggerFactory.getLogger(AuditDaoBean.class);
 
     @PersistenceContext(unitName = "auditPU")
     protected EntityManager em;
@@ -53,14 +53,12 @@ public class AuditDaoBean {
 
     private <T> void setQueryParameters(List<SearchValue> searchKeyValues, TypedQuery<T> query) {
         for (SearchValue searchValue : searchKeyValues) {
-            switch (searchValue.getField()) {
-            case FROM_DATE:
-                query.setParameter("fromDate", DateUtils.stringToDate(searchValue.getValue()));
-                break;
-            case TO_DATE:
-                query.setParameter("toDate", DateUtils.stringToDate(searchValue.getValue()));
-                break;
-            }
+        	if (searchValue.getField() == FROM_DATE) {
+        		query.setParameter("fromDate", DateUtils.stringToDate(searchValue.getValue()));
+        	}
+        	else if (searchValue.getField() == TO_DATE) {
+        		query.setParameter("toDate", DateUtils.stringToDate(searchValue.getValue()));
+        	}
         }
     }
 
