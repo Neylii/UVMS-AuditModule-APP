@@ -64,7 +64,7 @@ public class SearchFieldMapper {
         if (searchFields != null) {
             countBuffer.append(createSearchSql(searchFields, isDynamic));
         }
-        LOG.debug("[ COUNT SQL: ]" + countBuffer.toString());
+        LOG.debug(String.format("[ COUNT SQL: ]%s", countBuffer.toString()));
         return countBuffer.toString();
     }
 
