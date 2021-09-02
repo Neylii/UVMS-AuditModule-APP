@@ -31,7 +31,7 @@ import java.util.List;
 @Stateless
 public class AuditDomainModelBean {
 
-    final static Logger LOG = LoggerFactory.getLogger(AuditDomainModelBean.class);
+    static final Logger LOG = LoggerFactory.getLogger(AuditDomainModelBean.class);
 
     @Inject
     private AuditDaoBean auditDao;
