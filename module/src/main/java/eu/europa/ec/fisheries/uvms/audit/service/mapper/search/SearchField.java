@@ -27,9 +27,9 @@ public enum SearchField {
     private final String fieldName;
     private final String fieldValue;
     private final SearchTables searchTables;
-    private Class clazz;
+    private Class<T> clazz;
 
-    SearchField(String fieldName, String fieldValue, SearchTables searchTables, Class clazz) {
+    SearchField(String fieldName, String fieldValue, SearchTables searchTables, Class<T> clazz) {
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
         this.searchTables = searchTables;
@@ -48,7 +48,7 @@ public enum SearchField {
         return fieldValue;
     }
 
-    public Class getClazz() {
+    public Class<T> getClazz() {
         return clazz;
     }
 
