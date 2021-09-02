@@ -44,7 +44,7 @@ public class SearchFieldMapper {
             selectBuffer.append(createSearchSql(searchFields, isDynamic));
         }
         selectBuffer.append(" ORDER BY ").append(SearchTables.AUDIT.getTableAlias()).append(".timestamp DESC");
-        LOG.debug("[ SQL: ] " + selectBuffer.toString());
+        LOG.debug(String.format("[ SQL: ] %s", selectBuffer.toString()));
         return selectBuffer.toString();
     }
 
