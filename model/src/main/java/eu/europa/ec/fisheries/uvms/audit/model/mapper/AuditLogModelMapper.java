@@ -23,7 +23,6 @@ public class AuditLogModelMapper {
         createAuditLogRequest.setAuditLog(auditLogType);
         createAuditLogRequest.setMethod(AuditDataSourceMethod.CREATE);
 
-        String auditData = JAXBMarshaller.marshallJaxBObjectToString(createAuditLogRequest);
-        return auditData;
+        return JAXBMarshaller.marshallJaxBObjectToString(createAuditLogRequest);
     }
 }
