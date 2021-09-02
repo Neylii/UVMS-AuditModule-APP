@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 public class JAXBMarshaller {
 
-    final static Logger LOG = LoggerFactory.getLogger(JAXBMarshaller.class);
+    static final Logger LOG = LoggerFactory.getLogger(JAXBMarshaller.class);
 
     private static Map<String, JAXBContext> contexts = new HashMap<>();
 
@@ -74,7 +74,7 @@ public class JAXBMarshaller {
      * @return
      * @throws
      */
-    public static <R> R unmarshallTextMessage(TextMessage textMessage, Class clazz)  {
+    public static <R> R unmarshallTextMessage(TextMessage textMessage, Class<T> clazz)  {
         try {
             JAXBContext jc = contexts.get(clazz.getName());
             if (jc == null) {
