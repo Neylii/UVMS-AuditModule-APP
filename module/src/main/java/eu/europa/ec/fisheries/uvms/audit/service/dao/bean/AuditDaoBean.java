@@ -53,12 +53,14 @@ public class AuditDaoBean {
 
     private <T> void setQueryParameters(List<SearchValue> searchKeyValues, TypedQuery<T> query) {
         for (SearchValue searchValue : searchKeyValues) {
-        	if (searchValue.getField() == FROM_DATE) {
-        		query.setParameter("fromDate", DateUtils.stringToDate(searchValue.getValue()));
-        	}
-        	else if (searchValue.getField() == TO_DATE) {
-        		query.setParameter("toDate", DateUtils.stringToDate(searchValue.getValue()));
-        	}
+        	switch (searchValue.getField()) {
+            case FROM_DATE:
+                query.setParameter("fromDate", DateUtils.stringToDate(searchValue.getValue()));
+                break;
+            case TO_DATE:
+                query.setParameter("toDate", DateUtils.stringToDate(searchValue.getValue()));
+                break;
+            }
         }
     }
 
