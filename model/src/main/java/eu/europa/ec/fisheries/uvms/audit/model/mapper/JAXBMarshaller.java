@@ -74,7 +74,7 @@ public class JAXBMarshaller {
      * @return
      * @throws
      */
-    public static <R> R unmarshallTextMessage(TextMessage textMessage, Class<T> clazz)  {
+    public static <R> R unmarshallTextMessage(TextMessage textMessage, Class clazz)  {
         try {
             JAXBContext jc = contexts.get(clazz.getName());
             if (jc == null) {
