@@ -6,6 +6,10 @@ import eu.europa.ec.fisheries.schema.audit.v1.AuditLogType;
 
 public class AuditLogModelMapper {
 
+    private AuditLogModelMapper() {
+        // Utility class
+    }
+
     public static String mapToAuditLog(String objectType, String operation, String affectedObject, String username) {
         return mapToAuditLog(objectType, operation, affectedObject, null, username);
     }

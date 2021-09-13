@@ -23,6 +23,9 @@ import java.time.Instant;
 
 public class AuditLogMapper {
 
+    private AuditLogMapper() {
+        // Utility class
+    }
 
     public static AuditLogType toModel(AuditLog auditlog) {
         AuditLogType model = new AuditLogType();
