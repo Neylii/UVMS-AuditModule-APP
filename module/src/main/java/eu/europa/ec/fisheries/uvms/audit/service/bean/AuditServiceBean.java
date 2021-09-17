@@ -26,7 +26,7 @@ import javax.inject.Inject;
 @Stateless
 public class AuditServiceBean {
 
-    final static Logger LOG = LoggerFactory.getLogger(AuditServiceBean.class);
+    static final Logger LOG = LoggerFactory.getLogger(AuditServiceBean.class);
 
     @Inject
     private AuditDomainModelBean model;

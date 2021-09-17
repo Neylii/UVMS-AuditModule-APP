@@ -27,7 +27,7 @@ import java.util.Set;
 @ApplicationPath(RestConstants.REST_URL)
 public class RestActivator extends Application {
 
-    final static Logger LOG = LoggerFactory.getLogger(RestActivator.class);
+    static final Logger LOG = LoggerFactory.getLogger(RestActivator.class);
 
     private final Set<Object> singletons = new HashSet<>();
     private final Set<Class<?>> set = new HashSet<>();
