@@ -35,7 +35,7 @@ import javax.ws.rs.core.Response;
 @Stateless
 public class AuditRestResource {
 
-    final static Logger LOG = LoggerFactory.getLogger(AuditRestResource.class);
+    static final Logger LOG = LoggerFactory.getLogger(AuditRestResource.class);
 
     @Inject
     private AuditServiceBean serviceLayer;
