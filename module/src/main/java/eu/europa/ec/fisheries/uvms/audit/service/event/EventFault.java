@@ -16,7 +16,8 @@ public class EventFault {
     private Integer code;
     private String message;
 
-    public EventFault() {
+    private EventFault() {
+        // Utility
     }
 
     public Integer getCode() {
